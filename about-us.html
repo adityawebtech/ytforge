@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Learn more about YTForge, our mission, and the people behind the tools.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Learn more about YTForge - the all-in-one YouTube tool platform. Discover our mission, vision, and how we empower content creators." />
   <title>About Us - YTForge</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
+
 <body>
   <header>
-    <nav class="navbar">
+    <nav>
       <div class="logo">YTForge</div>
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-      </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="tools.html">Tools</a></li>
-        <li><a href="about-us.html" class="active">About</a></li>
+        <li><a href="about-us.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>About YTForge</h1>
-      <p>Empowering Creators. Simplifying YouTube.</p>
+  <main class="container about-section">
+    <section class="about-hero">
+      <img src="https://images.unsplash.com/photo-1581092334500-06b7f4c91a5c?fit=crop&w=1200&q=80"
+        alt="About YTForge" class="about-image" />
+      <div class="about-intro">
+        <h1>About YTForge</h1>
+        <p>YTForge is a powerful all-in-one platform designed for YouTubers, creators, and marketers who want to grow
+          their presence on YouTube efficiently. From downloading videos to checking monetization status and extracting
+          tags, YTForge offers a complete suite of tools to support your creative journey.</p>
+      </div>
     </section>
 
     <section class="about-content">
-      <h2>Who We Are</h2>
-      <p>YTForge was born out of a simple idea: to make YouTube tools accessible, reliable, and user-friendly for creators of all levels. We know how challenging it can be to manage, analyze, and optimize content on YouTube—so we created a platform to make that process easier.</p>
-
       <h2>Our Mission</h2>
-      <p>Our mission is to support digital creators by offering fast, free, and effective tools that help with everything from video downloading to metadata extraction, tag analysis, copyright awareness, and monetization checking. Whether you're a beginner or a seasoned creator, YTForge is here to back your journey.</p>
+      <p>At YTForge, our mission is to simplify the lives of content creators by offering easy-to-use, reliable, and
+        fast tools that help them manage, analyze, and optimize their YouTube content. Whether you are a beginner or a
+        professional YouTuber, our goal is to give you the right tools that can elevate your content strategy.</p>
 
-      <h2>Why YTForge?</h2>
+      <h2>Why We Built YTForge</h2>
+      <p>YouTube is full of endless opportunities, but managing a channel and staying competitive can be challenging.
+        We created YTForge out of the need for a single hub where creators could do everything—without switching
+        platforms or paying for expensive tools. YTForge is lightweight, fast, and mobile-friendly so you can use it
+        anytime, anywhere.</p>
+
+      <h2>What Makes YTForge Unique?</h2>
       <ul>
-        <li><strong>Fast & Simple Tools:</strong> No clutter. Just clean interfaces and instant results.</li>
-        <li><strong>Creator-Centric:</strong> Everything we build is designed with your growth in mind.</li>
-        <li><strong>Free Access:</strong> We believe that powerful tools should be available to everyone, not just professionals.</li>
+        <li>Completely free tools to support creators of all levels</li>
+        <li>Built with a clean, minimal, and modern design for distraction-free use</li>
+        <li>Mobile-first and responsive for easy access on phones and tablets</li>
+        <li>Constant updates and new features based on user feedback</li>
       </ul>
 
-      <h2>Meet the Team</h2>
-      <p>We're a small group of developers, content creators, and tech enthusiasts who are passionate about digital freedom and creativity. We use the tools we build—and we build them better every day based on real user feedback.</p>
-    </section>
+      <h2>Meet the Creator</h2>
+      <p>YTForge is the result of a creator’s desire to make YouTube growth easier for everyone. Built from the ground
+        up with simplicity, utility, and design in mind, we’re proud to serve a growing community of video creators,
+        educators, musicians, and professionals worldwide.</p>
 
-    <section class="call-to-action">
-      <h2>Join Our Mission</h2>
-      <p>Thousands of creators use YTForge to enhance their workflow. Ready to be one of them?</p>
-      <a href="tools.html" class="cta-button">Explore Our Tools</a>
+      <h2>Join Us on the Journey</h2>
+      <p>If you’re a YouTuber, content creator, or digital enthusiast, YTForge is made for you. We invite you to try our
+        tools, share your feedback, and grow with us. Together, let’s make YouTube content smarter, faster, and more
+        accessible for all.</p>
     </section>
   </main>
 
@@ -65,15 +77,6 @@
       </ul>
     </div>
   </footer>
-
-  <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenu.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      mobileMenu.classList.toggle('is-active');
-    });
-  </script>
 </body>
+
 </html>
