@@ -1,82 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About YTForge, your one-stop destination for all YouTube tools, from video downloading to monetization checks and more.">
-    <title>About Us - YTForge</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Learn more about YTForge, our mission, and the people behind the tools.">
+  <title>About Us - YTForge</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">YTForge</div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="/">YTForge</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/tools.html">Tools</a></li>
-                <li><a href="/about.html" class="active">About Us</a></li>
-                <li><a href="/contact.html">Contact Us</a></li>
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/terms-of-service.html">Terms of Service</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- About Us Section -->
-    <section class="about-us">
-        <div class="container">
-            <h1>About YTForge</h1>
-            <p>Welcome to YTForge, the ultimate platform designed to cater to all your YouTube-related needs. Whether you're a content creator, marketer, or a regular YouTube viewer, our platform provides a suite of tools that help you optimize your YouTube experience.</p>
-
-            <h2>Our Mission</h2>
-            <p>At YTForge, our mission is simple: to provide YouTube creators and enthusiasts with an all-in-one platform for managing their YouTube content. We strive to make YouTube easier to use, more accessible, and more effective for everyone, whether you're managing a channel or just exploring your favorite videos.</p>
-
-            <h2>What We Offer</h2>
-            <p>We offer a variety of tools to enhance your YouTube experience, including:</p>
-            <ul>
-                <li>YouTube to MP3 and MP4 Downloader</li>
-                <li>Meta Data Extractor for YouTube Videos</li>
-                <li>YouTube Monetization Checker</li>
-                <li>Tags Extractor</li>
-                <li>YouTube Copyright Checker Tool</li>
-            </ul>
-            <p>All our tools are designed to help YouTube content creators manage, optimize, and grow their channels with ease. Whether you need to download videos, analyze metadata, or check for copyright issues, YTForge has got you covered.</p>
-
-            <h2>Our Vision</h2>
-            <p>We envision YTForge as a one-stop shop for all things related to YouTube. Our goal is to continue developing innovative tools that help YouTube creators and viewers make the most of the platform. We believe in empowering creators to create better content, reach a larger audience, and succeed on YouTube.</p>
-
-            <h2>Why Choose YTForge?</h2>
-            <p>Here’s why you should choose YTForge:</p>
-            <ul>
-                <li><strong>Comprehensive Tools:</strong> From video downloaders to monetization checkers, we provide an array of tools to suit every need.</li>
-                <li><strong>Easy-to-Use Interface:</strong> We believe in simplicity, and our user-friendly design ensures that you can get the job done quickly and efficiently.</li>
-                <li><strong>Free Access:</strong> Most of our tools are free to use with no hidden charges or premium features, making it accessible to everyone.</li>
-                <li><strong>Fast and Secure:</strong> We prioritize your safety and privacy. All the data you share with us is protected by advanced security protocols.</li>
-            </ul>
-
-            <h2>Our Team</h2>
-            <p>Our team consists of passionate developers, designers, and digital enthusiasts who are constantly working to improve and update our tools. We are committed to bringing you the best YouTube tool experience available on the web.</p>
-
-            <h2>Contact Us</h2>
-            <p>If you have any questions, suggestions, or feedback, feel free to <a href="/contact.html">contact us</a>. We're always happy to hear from you and improve our platform.</p>
-        </div>
+  <main class="container">
+    <section class="hero">
+      <h1>About YTForge</h1>
+      <p>Empowering Creators. Simplifying YouTube.</p>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2025 YTForge. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy-policy.html">Privacy Policy</a>
-                <a href="/terms-of-service.html">Terms of Service</a>
-                <a href="/contact.html">Contact Us</a>
-            </div>
-        </div>
-    </footer>
+    <section class="about-content">
+      <h2>Who We Are</h2>
+      <p>YTForge was born out of a simple idea: to make YouTube tools accessible, reliable, and user-friendly for creators of all levels. We know how challenging it can be to manage, analyze, and optimize content on YouTube—so we created a platform to make that process easier.</p>
 
+      <h2>Our Mission</h2>
+      <p>Our mission is to support digital creators by offering fast, free, and effective tools that help with everything from video downloading to metadata extraction, tag analysis, copyright awareness, and monetization checking. Whether you're a beginner or a seasoned creator, YTForge is here to back your journey.</p>
+
+      <h2>Why YTForge?</h2>
+      <ul>
+        <li><strong>Fast & Simple Tools:</strong> No clutter. Just clean interfaces and instant results.</li>
+        <li><strong>Creator-Centric:</strong> Everything we build is designed with your growth in mind.</li>
+        <li><strong>Free Access:</strong> We believe that powerful tools should be available to everyone, not just professionals.</li>
+      </ul>
+
+      <h2>Meet the Team</h2>
+      <p>We're a small group of developers, content creators, and tech enthusiasts who are passionate about digital freedom and creativity. We use the tools we build—and we build them better every day based on real user feedback.</p>
+    </section>
+
+    <section class="call-to-action">
+      <h2>Join Our Mission</h2>
+      <p>Thousands of creators use YTForge to enhance their workflow. Ready to be one of them?</p>
+      <a href="tools.html" class="cta-button">Explore Our Tools</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 YTForge. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenu.classList.toggle('is-active');
+    });
+  </script>
 </body>
 </html>
