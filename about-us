@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About YTForge, your one-stop destination for all YouTube tools, from video downloading to monetization checks and more.">
+    <title>About Us - YTForge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">YTForge</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/tools.html">Tools</a></li>
+                <li><a href="/about.html" class="active">About Us</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="container">
+            <h1>About YTForge</h1>
+            <p>Welcome to YTForge, the ultimate platform designed to cater to all your YouTube-related needs. Whether you're a content creator, marketer, or a regular YouTube viewer, our platform provides a suite of tools that help you optimize your YouTube experience.</p>
+
+            <h2>Our Mission</h2>
+            <p>At YTForge, our mission is simple: to provide YouTube creators and enthusiasts with an all-in-one platform for managing their YouTube content. We strive to make YouTube easier to use, more accessible, and more effective for everyone, whether you're managing a channel or just exploring your favorite videos.</p>
+
+            <h2>What We Offer</h2>
+            <p>We offer a variety of tools to enhance your YouTube experience, including:</p>
+            <ul>
+                <li>YouTube to MP3 and MP4 Downloader</li>
+                <li>Meta Data Extractor for YouTube Videos</li>
+                <li>YouTube Monetization Checker</li>
+                <li>Tags Extractor</li>
+                <li>YouTube Copyright Checker Tool</li>
+            </ul>
+            <p>All our tools are designed to help YouTube content creators manage, optimize, and grow their channels with ease. Whether you need to download videos, analyze metadata, or check for copyright issues, YTForge has got you covered.</p>
+
+            <h2>Our Vision</h2>
+            <p>We envision YTForge as a one-stop shop for all things related to YouTube. Our goal is to continue developing innovative tools that help YouTube creators and viewers make the most of the platform. We believe in empowering creators to create better content, reach a larger audience, and succeed on YouTube.</p>
+
+            <h2>Why Choose YTForge?</h2>
+            <p>Here’s why you should choose YTForge:</p>
+            <ul>
+                <li><strong>Comprehensive Tools:</strong> From video downloaders to monetization checkers, we provide an array of tools to suit every need.</li>
+                <li><strong>Easy-to-Use Interface:</strong> We believe in simplicity, and our user-friendly design ensures that you can get the job done quickly and efficiently.</li>
+                <li><strong>Free Access:</strong> Most of our tools are free to use with no hidden charges or premium features, making it accessible to everyone.</li>
+                <li><strong>Fast and Secure:</strong> We prioritize your safety and privacy. All the data you share with us is protected by advanced security protocols.</li>
+            </ul>
+
+            <h2>Our Team</h2>
+            <p>Our team consists of passionate developers, designers, and digital enthusiasts who are constantly working to improve and update our tools. We are committed to bringing you the best YouTube tool experience available on the web.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions, suggestions, or feedback, feel free to <a href="/contact.html">contact us</a>. We're always happy to hear from you and improve our platform.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 YTForge. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="/contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
