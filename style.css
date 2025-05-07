@@ -23,21 +23,24 @@ ul {
 
 /* Header Styles */
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
+    background-color: #1a1a2e; /* Updated to match the header from index.html */
+    padding: 10px 20px;
+    color: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
+    animation: fadeInDown 0.5s ease-in-out; /* Added animation */
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .nav-links {
@@ -61,38 +64,41 @@ nav {
     background-color: #ff6347;
 }
 
-/* Hamburger Menu Styles */
 .menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    gap: 5px;
 }
 
 .menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background-color: #fff;
-  border-radius: 2px;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 2px;
 }
 
 /* Mobile Nav Behavior */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
+    .menu-toggle {
+        display: flex;
+    }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #1e1e1e;
-    width: 100%;
-    padding: 15px 20px;
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        width: 100%;
+        padding: 15px 20px;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
 }
 
 /* Hero Section */
@@ -256,7 +262,7 @@ nav {
 
 /* Footer Styles */
 footer {
-    background-color: #333;
+    background-color: #1a1a2e; /* Match with header background */
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -312,4 +318,16 @@ footer {
     .hero p {
         font-size: 18px;
     }
-  }
+}
+
+/* Animation */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
