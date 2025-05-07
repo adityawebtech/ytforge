@@ -23,19 +23,20 @@ ul {
 
 /* Header Styles */
 header {
-    background-color: #1a1a2e; /* Updated to match the header from index.html */
+    background-color: #1a1a2e;
     padding: 10px 20px;
     color: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
-    animation: fadeInDown 0.5s ease-in-out; /* Added animation */
+    animation: fadeInDown 0.5s ease-in-out;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -43,9 +44,18 @@ nav {
     font-weight: bold;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: white;
+}
+
+/* Navigation links */
 .nav-links {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .nav-links li {
@@ -55,7 +65,7 @@ nav {
 .nav-links a {
     color: white;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -64,40 +74,33 @@ nav {
     background-color: #ff6347;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-/* Mobile Nav Behavior */
+/* Responsive Menu */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex;
+        display: block;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #1e1e1e;
         width: 100%;
-        padding: 15px 20px;
+        background-color: #1e1e2e;
+        margin-top: 10px;
+        padding: 10px 0;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-links.show {
-        display: flex;
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 12px;
     }
 }
 
@@ -262,7 +265,7 @@ nav {
 
 /* Footer Styles */
 footer {
-    background-color: #1a1a2e; /* Match with header background */
+    background-color: #1a1a2e;
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -294,12 +297,6 @@ footer {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
     .feature-list {
         grid-template-columns: 1fr;
     }
