@@ -61,6 +61,40 @@ nav {
     background-color: #ff6347;
 }
 
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile Nav Behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #ff6347, #ff7f50);
