@@ -9,23 +9,8 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <nav>
-  <div class="logo">YTForge</div>
-  <div class="menu-toggle" id="mobile-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tools.html">Tools</a></li>
-    <li><a href="about-us.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-  </header>
-
+  
+ <div id="header"></div>
   <!-- About Section -->
   <main class="container">
     <section class="about-hero">
@@ -55,24 +40,28 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2025 YTFORGE. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
+   <div id="footer"></div>
 <script>
-  const menuToggle = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
+  async function loadComponent(id, file) {
+    const res = await fetch(file);
+    const text = await res.text();
+    document.getElementById(id).innerHTML = text;
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+    // Only add event listener after header is loaded
+    if (id === "header") {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      }
+    }
+  }
+
+  loadComponent("header", "header.html");
+  loadComponent("footer", "footer.html");
 </script>
 </body>
 </html>
