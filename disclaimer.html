@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disclaimer - YTFORGE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Disclaimer Section -->
+  <main class="container">
+    <section class="page-section">
+      <h1>Disclaimer</h1>
+      <p>The information provided by YTFORGE (“we,” “us,” or “our”) on this website is for general informational purposes only. All information on the Site is provided in good faith; however, we make no representation or warranty of any kind regarding the accuracy, adequacy, validity, reliability, or completeness of any information.</p>
+
+      <h2>External Links Disclaimer</h2>
+      <p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties. Such external links are not investigated, monitored, or checked for accuracy or completeness by us.</p>
+
+      <h2>Professional Disclaimer</h2>
+      <p>The Site cannot and does not contain legal, medical, fitness, or other professional advice. The information is provided for general informational and educational purposes only and is not a substitute for professional advice.</p>
+
+      <h2>Use at Your Own Risk</h2>
+      <p>Any reliance you place on such information is strictly at your own risk. We will not be liable for any losses or damages in connection with the use of our website.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    async function loadComponent(id, file) {
+      const res = await fetch(file);
+      const text = await res.text();
+      document.getElementById(id).innerHTML = text;
+
+      // Only add event listener after header is loaded
+      if (id === "header") {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (mobileMenu && navLinks) {
+          mobileMenu.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+          });
+        }
+      }
+    }
+
+    loadComponent("header", "header.html");
+    loadComponent("footer", "footer.html");
+  </script>
+</body>
+</html>
