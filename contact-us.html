@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact Us - YTForge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - YTFORGE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-    <!-- Header (called dynamically) -->
-    <div id="header"></div>
+  <!-- Header -->
+  <div id="header"></div>
 
-    <!-- Main Content -->
-    <main class="contact-us">
-        <section class="contact-section">
-            <h1>Contact Us</h1>
-            <p>If you have any questions or feedback, feel free to reach out to us.</p>
+  <!-- Contact Section -->
+  <main class="container">
+    <section class="page-section contact-section">
+      <h1>Contact Us</h1>
+      <p>If you have any questions, suggestions, or just want to say hello, feel free to reach out to us. We’d love to hear from you!</p>
 
-            <div class="contact-details">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 98765 43210</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>support@ytforge.com</span>
-                </div>
-            </div>
-        </section>
-    </main>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:support@ytforge.com">support@ytforge.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: +91-9876543210</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: YTFORGE HQ, Sector 21, Noida, Uttar Pradesh, India</p>
+      </div>
 
-    <!-- Footer (called dynamically) -->
-    <div id="footer"></div>
+      <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
-    <!-- Scripts -->
-    <script>
-  window.onload = function () {
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
     async function loadComponent(id, file) {
       const res = await fetch(file);
       const text = await res.text();
       document.getElementById(id).innerHTML = text;
 
+      // Only add event listener after header is loaded
       if (id === "header") {
-        setTimeout(() => {
-          const mobileMenu = document.getElementById("mobile-menu");
-          const navLinks = document.querySelector(".nav-links");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navLinks = document.querySelector(".nav-links");
 
-          if (mobileMenu && navLinks) {
-            mobileMenu.addEventListener("click", () => {
-              navLinks.classList.toggle("active");
-            });
-          }
-        }, 100);
+        if (mobileMenu && navLinks) {
+          mobileMenu.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+          });
+        }
       }
     }
 
     loadComponent("header", "header.html");
     loadComponent("footer", "footer.html");
-  };
-</script>
+  </script>
 </body>
 </html>
