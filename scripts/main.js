@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Load header
+  // Load header dynamically
   fetch('header.html')
     .then(response => response.text())
     .then(data => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(err => console.log('Error loading header:', err));
 
-  // Load footer
+  // Load footer dynamically
   fetch('footer.html')
     .then(response => response.text())
     .then(data => {
