@@ -136,6 +136,12 @@ body {
   padding: 60px 0;
 }
 
+.tools-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
 .tool-list {
   list-style: none;
   padding-left: 20px;
