@@ -195,6 +195,31 @@ h2 {
     gap: 10px;
   }
 }
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#theme-toggle i {
+  font-size: 1.5em;
+  color: #007bff;
+  margin: 0 5px;
+}
+
+body[data-theme='dark'] #sun-icon {
+  display: none;
+}
+
+body[data-theme='light'] #moon-icon {
+  display: none;
+}
+
+/* Rest of the CSS for header, navbar, etc. */
 
 /* Responsive Design */
 @media (max-width: 768px) {
