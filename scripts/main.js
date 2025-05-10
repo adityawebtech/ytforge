@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   // Load header dynamically
   fetch('header.html')
     .then(response => response.text())
@@ -11,17 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
       hamburger.addEventListener('click', function () {
         navbar.classList.toggle('active');
       });
-
-      // Add dark mode toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
-      themeToggle.addEventListener('click', function () {
-        const currentTheme = document.body.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-          document.body.setAttribute('data-theme', 'light');
-        } else {
-          document.body.setAttribute('data-theme', 'dark');
-        }
-      });
     })
     .catch(err => console.log('Error loading header:', err));
 
@@ -33,10 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(err => console.log('Error loading footer:', err));
 
-  // Remove preloader after window load
-  window.onload = function() {
+  // Dark Mode Toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', function () {
+    const currentTheme = document.body.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      document.body.setAttribute('data-theme', 'light');
+    } else {
+      document.body.setAttribute('data-theme', 'dark');
+    }
+  });
+
+  // Hide Preloader after page load
+  window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
-    preloader.style.opacity = '0';
-    setTimeout(() => preloader.style.display = 'none', 300);
-  }
+    preloader.classList.add('hide');
+  });
 });
