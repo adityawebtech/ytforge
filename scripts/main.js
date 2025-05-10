@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(response => response.text())
     .then(data => {
       document.getElementById('header').innerHTML = data;
-      // Add the hamburger menu toggle functionality after header is loaded
+      // Add hamburger menu toggle functionality after header is loaded
       const navbar = document.querySelector('.navbar');
       const hamburger = document.querySelector('.hamburger');
       hamburger.addEventListener('click', function () {
