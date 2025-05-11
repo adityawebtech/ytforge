@@ -157,6 +157,52 @@
   menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
   });
+
+  // MP3 Downloader Script
+  document.addEventListener('DOMContentLoaded', () => {
+    const downloadBtn = document.querySelector('button');
+    const input = document.querySelector('input');
+
+    downloadBtn.addEventListener('click', async () => {
+      const videoUrl = input.value.trim();
+
+      if (!videoUrl) {
+        alert("Please enter a YouTube video URL.");
+        return;
+      }
+
+      downloadBtn.disabled = true;
+      downloadBtn.textContent = 'Processing...';
+
+      try {
+        const response = await fetch('https://ytawt.replit.app/download', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ url: videoUrl })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          const downloadLink = document.createElement('a');
+          downloadLink.href = data.download_url;
+          downloadLink.download = '';
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        } else {
+          alert(data.message || 'Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Error: ' + error.message);
+      } finally {
+        downloadBtn.disabled = false;
+        downloadBtn.textContent = 'Download MP3';
+      }
+    });
+  });
 </script>
   
 </body>
