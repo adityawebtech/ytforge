@@ -15,31 +15,33 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 #preloader.hide {
-  visibility: hidden;
   opacity: 0;
+  visibility: hidden;
 }
 
-.preloader-text {
-  font-size: 2em;
-  color: #007bff;
-  border: 4px solid #007bff;
+/* Spinner animation */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #007bff;
+  border-top-color: transparent;
   border-radius: 50%;
-  padding: 20px;
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  line-height: 130px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Hero Section */
