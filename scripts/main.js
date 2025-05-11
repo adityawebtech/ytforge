@@ -35,10 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Hide Preloader after page load
-  window.addEventListener('load', function () {
-  const preloader = document.getElementById('preloader');
-  preloader.classList.add('hide');
-
-  // Optional fallback: force hide after 5 seconds
-  setTimeout(() => preloader.classList.add('hide'), 5000);
+  window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hide");
 });
