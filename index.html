@@ -1,107 +1,109 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YTFORGE</title>
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="YTWizard - Smarter Tools for Smarter Creators. Download thumbnails, extract SEO, convert videos & more — all free.">
+  <title>YTWizard – Smarter Tools for Smarter Creators</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+    }
+  </style>
 </head>
-<body>
-<!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
+<body class="bg-white text-gray-800">
 
-  <!-- Your main content -->
-  <h1 style="text-align:center; margin-top: 100px;">Page Content Loaded</h1>
-  <div id="header"></div>  <section class="hero">
-    <h1>Welcome to <span>YTFORGE</span></h1>
-    <p>Your one-stop solution for YouTube tools designed to boost your productivity and grow your YouTube channel.</p>
-  </section>  <section class="tools-section" id="tools">
-    <h2>Our Tools</h2>
-    <p class="section-description">
-      YTFORGE offers a wide range of powerful tools to help you optimize your YouTube content, increase visibility, and enhance your channel’s success.
-    </p>
-    <div class="tool-list">
-      <div class="tool-box">
-        <span class="new-badge">NEW</span>
-        <i class="fas fa-image icon"></i>
-        <h3>YouTube Thumbnail Grabber</h3>
-        <p>Grab high-quality thumbnails from any YouTube video with ease.</p>
-      </div>
-      <div class="tool-box">
-        <span class="new-badge">NEW</span>
-        <i class="fas fa-database icon"></i>
-        <h3>YouTube Meta Data Extractor</h3>
-        <p>Extract key metadata for YouTube videos such as title, description, and tags.</p>
-      </div>
-      <div class="tool-box">
-        <i class="fas fa-sack-dollar icon"></i>
-        <h3>YouTube Channel Monetization Checker</h3>
-        <p>Check if a YouTube channel is eligible for monetization.</p>
-      </div>
-      <div class="tool-box">
-        <i class="fas fa-tags icon"></i>
-        <h3>YouTube Tags Generator</h3>
-        <p>Generate the most effective tags for your YouTube videos to increase visibility.</p>
-      </div>
-      <div class="tool-box">
-        <i class="fas fa-hashtag icon"></i>
-        <h3>YouTube Hashtags Generator</h3>
-        <p>Generate relevant hashtags for your videos to improve reach.</p>
-      </div>
-      <div class="tool-box">
-        <i class="fas fa-chart-line icon"></i>
-        <h3>YouTube Analytics Checker</h3>
-        <p>Track and analyze your channel performance effectively.</p>
+  <!-- Header -->
+  <header class="bg-[#222222] text-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#FF0000]">YTWizard</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-[#FF0000]">Home</a>
+        <a href="#tools" class="hover:text-[#FF0000]">Tools</a>
+        <a href="#about" class="hover:text-[#FF0000]">About</a>
+        <a href="#contact" class="hover:text-[#FF0000]">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-[#FF0000] text-white py-20 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Smarter Tools for Smarter Creators</h2>
+    <p class="text-lg md:text-xl mb-8">Free YouTube tools to grow faster and smarter — without limits.</p>
+    <a href="#tools" class="bg-white text-[#FF0000] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Explore Tools</a>
+  </section>
+
+  <!-- Tools Grid -->
+  <section id="tools" class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10 text-[#222222]">Available Tools</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Tool Cards -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2">Thumbnail Downloader</h4>
+          <p class="text-sm mb-4">Download high-quality video thumbnails in one click.</p>
+          <a href="#" class="text-[#FF0000] font-medium">Open Tool →</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2">Metadata Extractor</h4>
+          <p class="text-sm mb-4">Get video titles, tags, publish date & more.</p>
+          <a href="#" class="text-[#FF0000] font-medium">Open Tool →</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2">SEO Analyzer</h4>
+          <p class="text-sm mb-4">Analyze SEO keywords and rank-boosting insights.</p>
+          <a href="#" class="text-[#FF0000] font-medium">Open Tool →</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2">MP3 Downloader</h4>
+          <p class="text-sm mb-4">Convert and download YouTube videos to MP3.</p>
+          <a href="#" class="text-[#FF0000] font-medium">Open Tool →</a>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+          <h4 class="text-xl font-semibold mb-2">MP4 Downloader</h4>
+          <p class="text-sm mb-4">Download high-quality MP4 videos with ease.</p>
+          <a href="#" class="text-[#FF0000] font-medium">Open Tool →</a>
+        </div>
       </div>
     </div>
-  </section>  <section class="features-section" id="features">
-    <h2>YTFORGE Features</h2>
-    <div class="features-grid">
-      <div class="feature-box">
-        <h3>Free Tool</h3>
-        <p>All tools are completely free to use, no hidden charges.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Ads Free</h3>
-        <p>Enjoy uninterrupted access to all tools without any ads.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Single Click Work</h3>
-        <p>Use each tool with a single click to save time and boost productivity.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Simple UI</h3>
-        <p>Our tools are designed to be intuitive and easy to use for anyone.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Regular Updates</h3>
-        <p>We’re always adding new tools and updating existing ones.</p>
+  </section>
+
+  <!-- About / Why Choose Us -->
+  <section id="about" class="py-20 bg-white text-center">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6 text-[#222222]">Why Choose YTWizard?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-10">
+        <div>
+          <h4 class="text-[#FF0000] text-xl font-bold mb-2">100% Free</h4>
+          <p class="text-sm text-gray-600">No subscriptions. No paywalls. Ever.</p>
+        </div>
+        <div>
+          <h4 class="text-[#FF0000] text-xl font-bold mb-2">Fast & Simple</h4>
+          <p class="text-sm text-gray-600">Tools built for speed and ease of use.</p>
+        </div>
+        <div>
+          <h4 class="text-[#FF0000] text-xl font-bold mb-2">Mobile Friendly</h4>
+          <p class="text-sm text-gray-600">Fully responsive tools that work on any device.</p>
+        </div>
+        <div>
+          <h4 class="text-[#FF0000] text-xl font-bold mb-2">Secure & Safe</h4>
+          <p class="text-sm text-gray-600">We never collect or store user data.</p>
+        </div>
       </div>
     </div>
-  </section>  <div class="settings-panel">
-    <button id="settings-toggle"><i class="fas fa-cog"></i></button>
-    <div class="settings-drawer">
-      <h4>Settings</h4>
-      <label>
-        <input type="checkbox" id="darkModeToggle">
-        Dark Mode
-      </label>
-      <label>
-        Font Size:
-        <select id="fontSizeSelect">
-          <option value="default">Default</option>
-          <option value="large">Large</option>
-          <option value="xlarge">Extra Large</option>
-        </select>
-      </label>
-      <label>
-        <input type="checkbox" id="preloaderToggle">
-        Enable Preloader
-      </label>
-    </div>
-  </div>  <div id="footer"></div>
-  <script src="scripts/main.js"></script>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#222222] text-white py-6 text-center">
+    <p class="text-sm">&copy; 2025 YTWizard. All rights reserved.</p>
+    <p class="text-xs mt-2">Built with love for content creators.</p>
+  </footer>
+
 </body>
 </html>
