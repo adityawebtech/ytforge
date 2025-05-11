@@ -167,6 +167,26 @@
   menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
   });
+ 
+  const track = document.getElementById('testimonial-track');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
+  let position = 0;
+  const cardWidth = track.children[0].offsetWidth + 24; // 24 for margin
+
+  nextBtn.addEventListener('click', () => {
+    if (position > -(cardWidth * (track.children.length - 1))) {
+      position -= cardWidth;
+      track.style.transform = `translateX(${position}px)`;
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (position < 0) {
+      position += cardWidth;
+      track.style.transform = `translateX(${position}px)`;
+    }
+  });
 </script>
 </body>
 </html>
