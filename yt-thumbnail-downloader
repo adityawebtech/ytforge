@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Thumbnail Downloader - YTWizard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0f0f0f] text-white font-sans">
+  <!-- Header -->
+  <header class="bg-[#1c1c1c] px-6 py-4 flex justify-between items-center">
+    <a href="/ytwizard/" class="text-2xl font-bold text-[#FF0000]">YTWizard</a>
+    <nav>
+      <a href="/ytwizard/" class="text-white hover:text-[#FF0000]">Home</a>
+    </nav>
+  </header>
+
+  <!-- Tool Title -->
+  <section class="text-center py-10 px-4">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">YouTube Thumbnail Downloader</h1>
+    <p class="text-gray-300 max-w-xl mx-auto">
+      Paste any YouTube video URL and download its thumbnail in all available sizes instantly.
+    </p>
+  </section>
+
+  <!-- Input Area -->
+  <section class="max-w-xl mx-auto px-4">
+    <input id="videoUrl" type="text" placeholder="Paste YouTube video URL here" class="w-full px-4 py-3 rounded-lg text-black mb-4" />
+    <button onclick="getThumbnails()" class="w-full bg-[#FF0000] text-white py-3 rounded-lg hover:bg-red-600">Generate Thumbnails</button>
+    <p id="error" class="text-red-500 text-sm mt-2 hidden">Invalid YouTube URL. Please try again.</p>
+    <div id="loader" class="text-center mt-4 hidden">
+      <div class="loader border-4 border-white border-t-red-500 rounded-full w-8 h-8 animate-spin mx-auto"></div>
+      <p class="text-sm mt-2">Generating thumbnails...</p>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="result" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-6 max-w-6xl mx-auto pb-20 hidden">
+    <!-- Thumbnails will be inserted here -->
+  </section>
+
+  <!-- JS -->
+  <script>
+    function extractVideoID(url) {
+      const regex = /(?:youtube\.com.*(?:\?v=|\/embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    }
+
+    function getThumbnails() {
+      const url = document.getElementById("videoUrl").value.trim();
+      const videoID = extractVideoID(url);
+      const result = document.getElementById("result");
+      const loader = document.getElementById("loader");
+      const error = document.getElementById("error");
+      result.innerHTML = "";
+      result.classList.add("hidden");
+      error.classList.add("hidden");
+      loader.classList.remove("hidden");
+
+      if (!videoID) {
+        loader.classList.add("hidden");
+        error.classList.remove("hidden");
+        return;
+      }
+
+      const sizes = [
+        { label: "Full HD", key: "maxresdefault" },
+        { label: "Standard HD", key: "sddefault" },
+        { label: "High Quality", key: "hqdefault" },
+        { label: "Medium Quality", key: "mqdefault" },
+        { label: "Low Quality", key: "default" },
+      ];
+
+      setTimeout(() => {
+        sizes.forEach(size => {
+          const imgURL = `https://img.youtube.com/vi/${videoID}/${size.key}.jpg`;
+          result.innerHTML += `
+            <div class="bg-[#1e1e1e] rounded-lg p-4 shadow-md text-center">
+              <img src="${imgURL}" alt="${size.label}" class="w-full mb-4 rounded" />
+              <h3 class="text-lg font-semibold mb-2">${size.label}</h3>
+              <a href="${imgURL}" download class="bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded">Download</a>
+            </div>
+          `;
+        });
+        loader.classList.add("hidden");
+        result.classList.remove("hidden");
+      }, 800);
+    }
+  </script>
+
+  <style>
+    .loader {
+      border-top-color: #FF0000;
+    }
+  </style>
+</body>
+</html>
