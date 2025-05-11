@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Extract metadata from any YouTube video. Get video details like title, description, tags, views, and more.">
+    <meta name="keywords" content="YouTube metadata extractor, video info, tags, views, description">
+    <meta name="author" content="Aditya Pal">
+    <title>YouTube Metadata Extractor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">YouTube Metadata Extractor</h1>
+        
+        <form id="metadata-form" class="mb-6">
+            <label for="video-url" class="block text-lg font-semibold mb-2">Enter YouTube Video URL</label>
+            <input type="url" id="video-url" class="w-full p-3 border rounded-lg" placeholder="Paste the YouTube URL here" required>
+            
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 mt-4 rounded-lg">Extract Metadata</button>
+        </form>
+
+        <div id="loading" class="hidden text-center text-lg text-gray-600">Loading...</div>
+        <div id="error-message" class="hidden text-center text-lg text-red-600"></div>
+
+        <div id="metadata" class="results hidden">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Video Metadata</h2>
+            <p><strong>Title:</strong> <span id="video-title"></span></p>
+            <p><strong>Description:</strong> <span id="video-description"></span></p>
+            <p><strong>Tags:</strong> <span id="video-tags"></span></p>
+            <p><strong>Hashtags:</strong> <span id="video-hashtags"></span></p>
+            <p><strong>Location:</strong> <span id="video-location"></span></p>
+            <p><strong>Uploaded:</strong> <span id="video-upload-date"></span></p>
+            <p><strong>Views:</strong> <span id="video-views"></span></p>
+            <p><strong>Likes:</strong> <span id="video-likes"></span></p>
+            <p><strong>Comments:</strong> <span id="video-comments"></span></p>
+            <p><strong>Shares:</strong> <span id="video-shares"></span></p>
+            <p><strong>Category:</strong> <span id="video-category"></span></p>
+            <p><strong>Uploaded Region:</strong> <span id="video-region"></span></p>
+            <p><strong>YouTube Thumbnail:</strong> <br><img src="" alt="YouTube Thumbnail" id="video-thumbnail" class="rounded-lg"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('metadata-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const videoUrl = document.getElementById('video-url').value;
+            const apiUrl = 'https://d8d23a99-b26e-48f6-94ea-cd1713434f0b-00-32cwhqgf8gtby.pike.replit.dev/get-metadata';
+            const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
+            const metadataDiv = document.getElementById('metadata');
+            
+            // Show loading message
+            loading.classList.remove('hidden');
+            errorMessage.classList.add('hidden');
+            metadataDiv.classList.add('hidden');
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: videoUrl })
+                });
+
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error('Failed to fetch metadata');
+                }
+
+                // Hide loading message
+                loading.classList.add('hidden');
+                
+                // Show metadata
+                metadataDiv.classList.remove('hidden');
+
+                document.getElementById('video-title').textContent = data.title;
+                document.getElementById('video-description').textContent = data.description;
+                document.getElementById('video-tags').textContent = data.tags.join(', ');
+                document.getElementById('video-hashtags').textContent = data.hashtags.join(', ');
+                document.getElementById('video-location').textContent = data.location;
+                document.getElementById('video-upload-date').textContent = new Date(data.uploadedAt).toLocaleString();
+                document.getElementById('video-views').textContent = data.views;
+                document.getElementById('video-likes').textContent = data.likes;
+                document.getElementById('video-comments').textContent = data.comments;
+                document.getElementById('video-shares').textContent = data.shares;
+                document.getElementById('video-category').textContent = data.category;
+                document.getElementById('video-region').textContent = data.region;
+                document.getElementById('video-thumbnail').src = data.thumbnail;
+
+            } catch (error) {
+                // Hide loading message
+                loading.classList.add('hidden');
+                errorMessage.classList.remove('hidden');
+                errorMessage.textContent = 'Error fetching video metadata. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
