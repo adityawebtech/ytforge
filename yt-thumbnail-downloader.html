@@ -111,8 +111,18 @@
   </section>
 
   <!-- Footer -->
-<footer class="bg-[#111] py-6 text-center text-gray-400">
-    <p>&copy; 2025 YTWizard. All Rights Reserved.</p>
+<footer class="bg-[#1c1c1c] text-white text-center py-4 mt-8">
+  <p id="footer-text" class="text-sm mb-1"></p>
+  <p class="text-sm">Developed with <span class="text-red-600">❤️</span> by Aditya in <span class="text-green-500">🇮🇳</span></p>
+
+  <script>
+    const year = new Date().getFullYear();
+    const siteName = "YTWizard";
+    const homeURL = "/ytwizard/";
+
+    document.getElementById("footer-text").innerHTML =
+      `&copy; ${year} <a href="${homeURL}" class="text-[#FF0000] hover:underline">${siteName}</a>. All rights reserved.`;
+  </script>
 </footer>
   
   <!-- JS -->
