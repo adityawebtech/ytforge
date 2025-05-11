@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YouTube MP3 Downloader - Download YouTube videos as MP3 audio files with high quality, free and easy to use.">
+    <title>YouTube MP3 Downloader - YTWizard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-[#111] text-white font-sans">
+
+<!-- Header -->
+<header class="w-full bg-[#111] py-4 px-6">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-[#FF0000]">YTWizard</h1>
+        <ul class="flex space-x-6">
+            <li><a href="/" class="hover:text-[#FF0000]">Home</a></li>
+            <li><a href="/tools/youtube-thumbnail-downloader.html" class="hover:text-[#FF0000]">Thumbnail Downloader</a></li>
+            <li><a href="/tools/youtube-mp4-downloader.html" class="hover:text-[#FF0000]">MP4 Downloader</a></li>
+            <li><a href="/tools/youtube-mp3-downloader.html" class="text-[#FF0000]">MP3 Downloader</a></li>
+            <li><a href="/tools/youtube-hashtag-generator.html" class="hover:text-[#FF0000]">Hashtag Generator</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-[#111] text-white py-12 px-6 text-center">
+    <h1 class="text-3xl font-bold mb-2">YouTube MP3 Downloader</h1>
+    <p class="text-lg text-gray-300">Download your favorite YouTube videos as high-quality MP3 files with ease.</p>
+</section>
+
+<!-- Tool Input Section -->
+<section class="max-w-2xl mx-auto px-6 py-10">
+    <input id="videoUrl" type="text" placeholder="Paste YouTube Video URL" class="w-full p-4 rounded bg-[#1e1e1e] text-white placeholder:text-gray-500">
+    <button onclick="handleDownload()" class="mt-4 w-full bg-[#FF0000] hover:bg-red-600 text-white py-3 rounded font-bold">Download MP3</button>
+</section>
+
+<!-- Results Area -->
+<section id="results" class="max-w-5xl mx-auto px-6 py-10">
+    <!-- MP3 download results will be inserted here -->
+</section>
+
+<!-- How to Use & Benefits Section -->
+<section class="px-6 max-w-5xl mx-auto text-gray-300 leading-relaxed mt-16 space-y-6">
+    <h2 class="text-3xl font-bold text-white">About YouTube MP3 Downloader</h2>
+    <p>
+        The YouTube MP3 Downloader tool allows you to convert any public YouTube video into an MP3 file in just a few clicks. Whether you want to save music, podcasts, or speeches, this tool ensures you get the highest quality MP3 audio in seconds.
+    </p>
+
+    <h3 class="text-2xl font-semibold text-white mt-10">How to Use the Tool?</h3>
+    <ol class="list-decimal list-inside space-y-2 text-gray-200">
+        <li>Copy the URL of the YouTube video you want to convert to MP3.</li>
+        <li>Paste the video URL into the input field at the top of this page.</li>
+        <li>Click the <strong>“Download MP3”</strong> button to start the conversion.</li>
+        <li>Wait while the tool processes the video and converts it into an MP3 file.</li>
+        <li>Click the <strong>Download</strong> button to save the MP3 file to your device.</li>
+    </ol>
+
+    <h3 class="text-2xl font-semibold text-white mt-10">Why Choose YTWizard's MP3 Downloader?</h3>
+    <div class="space-y-3 text-gray-200">
+        <h4 class="text-xl font-bold text-white">1. Fast and Reliable</h4>
+        <p>Our MP3 Downloader is powered by YouTube’s public APIs, ensuring quick conversion times with high accuracy.</p>
+
+        <h4 class="text-xl font-bold text-white">2. High-Quality Audio</h4>
+        <p>Get the best audio quality available from the video, including bitrate options for custom needs.</p>
+
+        <h4 class="text-xl font-bold text-white">3. No Ads, No Distractions</h4>
+        <p>Unlike other MP3 downloaders, YTWizard offers an ad-free experience to help you get to the content faster.</p>
+
+        <h4 class="text-xl font-bold text-white">4. Easy-to-Use Interface</h4>
+        <p>Our tool is designed to be user-friendly, with clear instructions and a simple interface that works on any device.</p>
+
+        <h4 class="text-xl font-bold text-white">5. Free to Use, Forever</h4>
+        <p>We believe in making YouTube audio available to everyone. That’s why our MP3 downloader is completely free to use, no registration or login required.</p>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-white mt-10">Why YouTube MP3 Downloaders Matter</h3>
+    <p>
+        Whether you’re a music enthusiast, a student, or a creator, downloading MP3 files from YouTube is essential for offline listening. Our tool helps you save your favorite tracks, podcasts, and lectures for easy access without worrying about internet connectivity.
+    </p>
+</section>
+
+<!-- Related Tools Section -->
+<section class="px-6 mt-16 max-w-5xl mx-auto">
+    <h2 class="text-xl font-semibold text-white mb-4">Try Other YTWizard Tools</h2>
+    <div class="flex gap-4 overflow-x-auto pb-4">
+        <a href="/tools/youtube-thumbnail-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Thumbnail Downloader</a>
+        <a href="/tools/youtube-mp4-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">MP4 Downloader</a>
+        <a href="/tools/youtube-hashtag-generator.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Hashtag Generator</a>
+        <a href="/tools/youtube-seo-extractor.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">SEO Extractor</a>
+        <a href="/tools/youtube-meta-viewer.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Meta Data Viewer</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#111] py-6 text-center text-gray-400">
+    <p>&copy; 2025 YTWizard. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
