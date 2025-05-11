@@ -100,7 +100,7 @@
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-8">What Our Users Say</h2>
     <div class="relative overflow-hidden">
-      <div id="testimonial-track" class="flex transition-transform duration-500 space-x-6">
+      <div id="testimonial-track" class="flex transition-transform duration-700 ease-in-out space-x-6">
         <!-- Testimonial 1 -->
         <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] bg-[#2a2a2a] rounded-lg p-6 shadow-md">
           <p class="mb-4 italic">"YTWizard is hands-down the best free tool platform I’ve used. Super fast and accurate!"</p>
@@ -171,22 +171,32 @@
   const track = document.getElementById('testimonial-track');
   const nextBtn = document.getElementById('next');
   const prevBtn = document.getElementById('prev');
+  const total = track.children.length;
   let position = 0;
-  const cardWidth = track.children[0].offsetWidth + 24; // 24 for margin
+  let currentIndex = 0;
+
+  const updateSlider = () => {
+    const cardWidth = track.children[0].offsetWidth + 24;
+    position = -cardWidth * currentIndex;
+    track.style.transform = `translateX(${position}px)`;
+  };
 
   nextBtn.addEventListener('click', () => {
-    if (position > -(cardWidth * (track.children.length - 1))) {
-      position -= cardWidth;
-      track.style.transform = `translateX(${position}px)`;
-    }
+    currentIndex = (currentIndex + 1) % total;
+    updateSlider();
   });
 
   prevBtn.addEventListener('click', () => {
-    if (position < 0) {
-      position += cardWidth;
-      track.style.transform = `translateX(${position}px)`;
-    }
+    currentIndex = (currentIndex - 1 + total) % total;
+    updateSlider();
   });
+
+  // Autoplay every 3 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % total;
+    updateSlider();
+  }, 3000);
+  
 </script>
 </body>
 </html>
