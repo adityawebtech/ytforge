@@ -196,7 +196,7 @@
       return;
     }
 
-    let timeLeft = 5;
+    let timeLeft = 25;
     countdownText.textContent = timeLeft;
     countdownContainer.classList.remove("hidden");
 
@@ -222,7 +222,7 @@
             <div class="bg-[#1e1e1e] rounded-lg p-4 shadow-md text-center">
               <img src="${imgURL}" alt="${size.label}" class="w-full mb-4 rounded" />
               <h3 class="text-lg font-semibold mb-2 text-white">${size.label}</h3>
-              <a href="${imgURL}" download class="bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded">Download</a>
+              <button onclick="downloadImage('${imgURL}', '${size.key}.jpg')" class="bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded">Download</button>
             </div>
           `;
         });
@@ -232,6 +232,23 @@
       }
     }, 1000);
   }
+
+  <!-- Force On Click Download  -->
+    <script>
+  function downloadImage(url, filename) {
+    fetch(url)
+      .then(res => res.blob())
+      .then(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      })
+      .catch(() => alert('Download failed. Please try again.'));
+  }
+</script>
 
     <!-- JavaScript to Toggle Menu -->
 
