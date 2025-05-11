@@ -1,102 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="YouTube MP3 Downloader - Download YouTube videos as MP3 audio files with high quality, free and easy to use.">
-    <title>YouTube MP3 Downloader - YTWizard</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube MP3 Downloader - Download Audio from YouTube Videos</title>
+  <meta name="description" content="Free YouTube MP3 Downloader tool to convert and download audio from YouTube videos in high-quality. Fast, secure, and no installation needed.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- JSON-LD for FAQ Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this YouTube MP3 downloader free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it is 100% free to use with unlimited downloads and no sign-ups required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download music from any YouTube video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can download the MP3 of most public YouTube videos, as long as they are not age-restricted or private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a file size or duration limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, our tool supports both short and long videos without any limit on file size or duration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install any software or extensions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No installation needed. Everything runs in your browser—just paste the link and download."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe and secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We don’t store any data or track users. It’s fast, safe, and privacy-friendly."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-[#111] text-white font-sans">
+<body class="bg-gray-900 text-white font-sans">
 
-<!-- Header -->
-<header class="w-full bg-[#111] py-4 px-6">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-[#FF0000]">YTWizard</h1>
-        <ul class="flex space-x-6">
-            <li><a href="/" class="hover:text-[#FF0000]">Home</a></li>
-            <li><a href="/tools/youtube-thumbnail-downloader.html" class="hover:text-[#FF0000]">Thumbnail Downloader</a></li>
-            <li><a href="/tools/youtube-mp4-downloader.html" class="hover:text-[#FF0000]">MP4 Downloader</a></li>
-            <li><a href="/tools/youtube-mp3-downloader.html" class="text-[#FF0000]">MP3 Downloader</a></li>
-            <li><a href="/tools/youtube-hashtag-generator.html" class="hover:text-[#FF0000]">Hashtag Generator</a></li>
-        </ul>
-    </nav>
-</header>
+  <!-- Header -->
+  <header class="bg-gray-800 shadow p-6 text-center">
+    <h1 class="text-3xl font-bold text-white">YouTube MP3 Downloader</h1>
+    <p class="mt-2 text-gray-300">Convert and download audio from YouTube videos for free</p>
+  </header>
 
-<!-- Hero Section -->
-<section class="bg-[#111] text-white py-12 px-6 text-center">
-    <h1 class="text-3xl font-bold mb-2">YouTube MP3 Downloader</h1>
-    <p class="text-lg text-gray-300">Download your favorite YouTube videos as high-quality MP3 files with ease.</p>
-</section>
-
-<!-- Tool Input Section -->
-<section class="max-w-2xl mx-auto px-6 py-10">
-    <input id="videoUrl" type="text" placeholder="Paste YouTube Video URL" class="w-full p-4 rounded bg-[#1e1e1e] text-white placeholder:text-gray-500">
-    <button onclick="handleDownload()" class="mt-4 w-full bg-[#FF0000] hover:bg-red-600 text-white py-3 rounded font-bold">Download MP3</button>
-</section>
-
-<!-- Results Area -->
-<section id="results" class="max-w-5xl mx-auto px-6 py-10">
-    <!-- MP3 download results will be inserted here -->
-</section>
-
-<!-- How to Use & Benefits Section -->
-<section class="px-6 max-w-5xl mx-auto text-gray-300 leading-relaxed mt-16 space-y-6">
-    <h2 class="text-3xl font-bold text-white">About YouTube MP3 Downloader</h2>
-    <p>
-        The YouTube MP3 Downloader tool allows you to convert any public YouTube video into an MP3 file in just a few clicks. Whether you want to save music, podcasts, or speeches, this tool ensures you get the highest quality MP3 audio in seconds.
-    </p>
-
-    <h3 class="text-2xl font-semibold text-white mt-10">How to Use the Tool?</h3>
-    <ol class="list-decimal list-inside space-y-2 text-gray-200">
-        <li>Copy the URL of the YouTube video you want to convert to MP3.</li>
-        <li>Paste the video URL into the input field at the top of this page.</li>
-        <li>Click the <strong>“Download MP3”</strong> button to start the conversion.</li>
-        <li>Wait while the tool processes the video and converts it into an MP3 file.</li>
-        <li>Click the <strong>Download</strong> button to save the MP3 file to your device.</li>
-    </ol>
-
-    <h3 class="text-2xl font-semibold text-white mt-10">Why Choose YTWizard's MP3 Downloader?</h3>
-    <div class="space-y-3 text-gray-200">
-        <h4 class="text-xl font-bold text-white">1. Fast and Reliable</h4>
-        <p>Our MP3 Downloader is powered by YouTube’s public APIs, ensuring quick conversion times with high accuracy.</p>
-
-        <h4 class="text-xl font-bold text-white">2. High-Quality Audio</h4>
-        <p>Get the best audio quality available from the video, including bitrate options for custom needs.</p>
-
-        <h4 class="text-xl font-bold text-white">3. No Ads, No Distractions</h4>
-        <p>Unlike other MP3 downloaders, YTWizard offers an ad-free experience to help you get to the content faster.</p>
-
-        <h4 class="text-xl font-bold text-white">4. Easy-to-Use Interface</h4>
-        <p>Our tool is designed to be user-friendly, with clear instructions and a simple interface that works on any device.</p>
-
-        <h4 class="text-xl font-bold text-white">5. Free to Use, Forever</h4>
-        <p>We believe in making YouTube audio available to everyone. That’s why our MP3 downloader is completely free to use, no registration or login required.</p>
+  <!-- Tool Section -->
+  <main class="flex flex-col items-center justify-center py-12 px-4">
+    <div class="w-full max-w-xl bg-gray-800 p-6 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4 text-white text-center">Enter YouTube Video URL</h2>
+      <input type="text" placeholder="https://www.youtube.com/watch?v=example" class="w-full p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button class="mt-4 w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md transition">Download MP3</button>
     </div>
+  </main>
 
-    <h3 class="text-2xl font-semibold text-white mt-10">Why YouTube MP3 Downloaders Matter</h3>
-    <p>
-        Whether you’re a music enthusiast, a student, or a creator, downloading MP3 files from YouTube is essential for offline listening. Our tool helps you save your favorite tracks, podcasts, and lectures for easy access without worrying about internet connectivity.
-    </p>
-</section>
+  <!-- SEO Description Text -->
+  <section class="max-w-4xl mx-auto px-6 py-10 text-gray-300">
+    <h2 class="text-2xl font-semibold text-white mb-4">Free YouTube MP3 Downloader Online</h2>
+    <p class="mb-4">Our YouTube MP3 Downloader lets you easily extract high-quality MP3 audio from any YouTube video in seconds. No sign-up, no limits, and no software installation required — just paste the link and download your favorite music or podcasts instantly.</p>
+    <p class="mb-4">Whether you're creating playlists, listening offline, or saving audio from educational videos, our tool is optimized for speed and ease of use. Enjoy clean, fast, and secure downloads straight from your browser.</p>
+    <p class="mb-4">We support multiple formats and devices, including Android, iOS, Windows, and macOS. Start converting now and get the audio you want in just one click!</p>
+  </section>
 
-<!-- Related Tools Section -->
-<section class="px-6 mt-16 max-w-5xl mx-auto">
-    <h2 class="text-xl font-semibold text-white mb-4">Try Other YTWizard Tools</h2>
-    <div class="flex gap-4 overflow-x-auto pb-4">
-        <a href="/tools/youtube-thumbnail-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Thumbnail Downloader</a>
-        <a href="/tools/youtube-mp4-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">MP4 Downloader</a>
-        <a href="/tools/youtube-hashtag-generator.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Hashtag Generator</a>
-        <a href="/tools/youtube-seo-extractor.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">SEO Extractor</a>
-        <a href="/tools/youtube-meta-viewer.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Meta Data Viewer</a>
+  <!-- FAQ Section -->
+  <section class="max-w-3xl mx-auto px-4 mt-16 text-gray-300">
+    <h2 class="text-2xl font-semibold text-white mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-lg font-semibold text-white">Is this YouTube MP3 downloader free?</h3>
+        <p>Yes, it is 100% free to use with unlimited downloads and no sign-ups required.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white">Can I download music from any YouTube video?</h3>
+        <p>You can download the MP3 of most public YouTube videos, as long as they are not age-restricted or private.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white">Is there a file size or duration limit?</h3>
+        <p>No, our tool supports both short and long videos without any limit on file size or duration.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white">Do I need to install any software or extensions?</h3>
+        <p>No installation needed. Everything runs in your browser—just paste the link and download.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white">Is it safe and secure?</h3>
+        <p>Absolutely. We don’t store any data or track users. It’s fast, safe, and privacy-friendly.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-[#111] py-6 text-center text-gray-400">
-    <p>&copy; 2025 YTWizard. All Rights Reserved.</p>
-</footer>
-
+  <!-- Footer -->
+  <footer class="mt-16 text-center text-gray-500 text-sm pb-8 px-4">
+    &copy; 2025 YouTube MP3 Downloader. All rights reserved.
+  </footer>
 </body>
 </html>
