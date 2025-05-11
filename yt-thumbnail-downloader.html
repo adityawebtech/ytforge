@@ -38,18 +38,57 @@
   </section>
 
   <!-- Input Area -->
-  <section class="max-w-xl mx-auto px-4">
-    <input id="videoUrl" type="text" placeholder="Paste YouTube video URL here" class="w-full px-4 py-3 rounded-lg text-black mb-4" />
-    <button onclick="getThumbnails()" class="w-full bg-[#FF0000] text-white py-3 rounded-lg hover:bg-red-600">Generate Thumbnails</button>
-    <p id="error" class="text-red-500 text-sm mt-2 hidden">Invalid YouTube URL. Please try again.</p>
-    <div id="loader" class="text-center mt-4 hidden">
-      <div class="loader border-4 border-white border-t-red-500 rounded-full w-8 h-8 animate-spin mx-auto"></div>
-      <p class="text-sm mt-2">Generating thumbnails...</p>
-    </div>
-  </section>
+  <!-- Input + Button Section -->
+<section class="max-w-xl mx-auto px-4 mt-10">
+  <input
+    id="videoUrl"
+    type="text"
+    placeholder="Paste YouTube video URL here"
+    class="w-full px-4 py-3 rounded-lg text-black mb-4"
+  />
+  <button
+    onclick="getThumbnails()"
+    class="w-full bg-[#FF0000] text-white py-3 rounded-lg hover:bg-red-600"
+  >
+    Generate Thumbnails
+  </button>
+  <p
+    id="error"
+    class="text-red-500 text-sm mt-2 hidden"
+  >
+    Invalid YouTube URL. Please try again.
+  </p>
 
-  <!-- Results -->
-  <section id="result" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-6 max-w-6xl mx-auto pb-20 hidden">
+  <!-- Loader -->
+  <div id="loader" class="text-center mt-4 hidden">
+    <div
+      class="loader border-4 border-white border-t-red-500 rounded-full w-8 h-8 animate-spin mx-auto"
+    ></div>
+    <p class="text-sm mt-2 text-white">Generating thumbnails...</p>
+  </div>
+
+  <!-- Countdown -->
+  <div
+    id="countdown-container"
+    class="text-center mt-4 hidden bg-gray-800 text-white p-4 rounded-lg shadow-md"
+  >
+    <p class="text-sm">
+      Please wait
+      <span
+        id="countdown"
+        class="font-bold text-red-500"
+        >5</span
+      >
+      seconds before download buttons appear...
+    </p>
+  </div>
+
+  <!-- Result Container -->
+  <div
+    id="result"
+    class="grid gap-4 mt-6 hidden"
+  ></div>
+</section>
     <!-- Thumbnails will be inserted here -->
   </section>
 <section class="px-6 mt-16 max-w-5xl mx-auto">
@@ -127,53 +166,72 @@
 </footer>
   
   <!-- JS -->
-  <script>
-    function extractVideoID(url) {
-      const regex = /(?:youtube\.com.*(?:\?v=|\/embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-      const match = url.match(regex);
-      return match ? match[1] : null;
+  <!-- Script -->
+<script>
+  function extractVideoID(url) {
+    const regex =
+      /(?:youtube\.com.*(?:\?v=|\/embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  }
+
+  function getThumbnails() {
+    const url = document.getElementById("videoUrl").value.trim();
+    const videoID = extractVideoID(url);
+    const result = document.getElementById("result");
+    const loader = document.getElementById("loader");
+    const error = document.getElementById("error");
+    const countdownContainer = document.getElementById("countdown-container");
+    const countdownText = document.getElementById("countdown");
+
+    result.innerHTML = "";
+    result.classList.add("hidden");
+    error.classList.add("hidden");
+    loader.classList.remove("hidden");
+    countdownContainer.classList.add("hidden");
+
+    if (!videoID) {
+      loader.classList.add("hidden");
+      error.classList.remove("hidden");
+      return;
     }
 
-    function getThumbnails() {
-      const url = document.getElementById("videoUrl").value.trim();
-      const videoID = extractVideoID(url);
-      const result = document.getElementById("result");
-      const loader = document.getElementById("loader");
-      const error = document.getElementById("error");
-      result.innerHTML = "";
-      result.classList.add("hidden");
-      error.classList.add("hidden");
-      loader.classList.remove("hidden");
+    let timeLeft = 5;
+    countdownText.textContent = timeLeft;
+    countdownContainer.classList.remove("hidden");
 
-      if (!videoID) {
-        loader.classList.add("hidden");
-        error.classList.remove("hidden");
-        return;
-      }
+    const countdownInterval = setInterval(() => {
+      timeLeft--;
+      countdownText.textContent = timeLeft;
 
-      const sizes = [
-        { label: "Full HD", key: "maxresdefault" },
-        { label: "Standard HD", key: "sddefault" },
-        { label: "High Quality", key: "hqdefault" },
-        { label: "Medium Quality", key: "mqdefault" },
-        { label: "Low Quality", key: "default" },
-      ];
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        countdownContainer.classList.add("hidden");
 
-      setTimeout(() => {
-        sizes.forEach(size => {
+        const sizes = [
+          { label: "Full HD", key: "maxresdefault" },
+          { label: "Standard HD", key: "sddefault" },
+          { label: "High Quality", key: "hqdefault" },
+          { label: "Medium Quality", key: "mqdefault" },
+          { label: "Low Quality", key: "default" },
+        ];
+
+        sizes.forEach((size) => {
           const imgURL = `https://img.youtube.com/vi/${videoID}/${size.key}.jpg`;
           result.innerHTML += `
             <div class="bg-[#1e1e1e] rounded-lg p-4 shadow-md text-center">
               <img src="${imgURL}" alt="${size.label}" class="w-full mb-4 rounded" />
-              <h3 class="text-lg font-semibold mb-2">${size.label}</h3>
+              <h3 class="text-lg font-semibold mb-2 text-white">${size.label}</h3>
               <a href="${imgURL}" download class="bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded">Download</a>
             </div>
           `;
         });
+
         loader.classList.add("hidden");
         result.classList.remove("hidden");
-      }, 800);
-    }
+      }
+    }, 1000);
+  }
 
     <!-- JavaScript to Toggle Menu -->
 
