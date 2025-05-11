@@ -1,74 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Meta Tags for SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Generate effective YouTube hashtags using our easy-to-use YouTube Hashtags Generator tool. Optimize your video for better searchability and visibility on YouTube." />
-  <meta name="keywords" content="YouTube hashtags generator, YouTube SEO, video hashtags, YouTube video optimization, hashtag generator for YouTube, YouTube growth, YouTube content ideas, YouTube ranking" />
-  <meta name="author" content="Aditya Pal" />
-  <meta property="og:title" content="YouTube Hashtags Generator - YTWizard" />
-  <meta property="og:description" content="Use YTWizard's YouTube Hashtags Generator tool to create the most effective and relevant hashtags for your YouTube videos and boost your channel's visibility." />
-  <meta property="og:image" content="URL-to-image" />
-  <meta property="og:type" content="website" />
-  <title>YouTube Hashtags Generator - YTWizard</title>
-
+  <title>YouTube Metadata Extractor - Extract Video Metadata</title>
+  <meta name="description" content="Free YouTube Metadata Extractor tool to fetch all video details including title, description, upload date, views, and more. Fast and easy to use, no installation required.">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Add this Schema JSON-LD within the <head> section -->
+  <!-- JSON-LD for FAQ Rich Snippets -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are YouTube hashtags?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hashtags on YouTube are clickable keywords that help categorize videos. When viewers click on a hashtag, they’re shown other videos with the same hashtag. This helps increase discoverability and video ranking."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why are hashtags important for YouTube videos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hashtags help increase your video's visibility, making it easier for users to find your content. They play a key role in YouTube SEO and video discoverability by improving the ranking of your videos in search results."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the YouTube Hashtags Generator work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The YouTube Hashtags Generator uses your video idea, title, or keywords to generate a list of relevant and trending hashtags for your video. These hashtags are based on popular search terms and YouTube algorithms, helping you optimize your video for better ranking."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I use the generated hashtags for all my YouTube videos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! You can use the generated hashtags for any of your videos to help improve discoverability. However, make sure the hashtags are relevant to your video content for better results."
-          }
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this YouTube Metadata Extractor free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it is 100% free to use with unlimited extractions and no sign-ups required."
         }
-      ]
-    }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I extract metadata from any YouTube video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can extract metadata from any public YouTube video, as long as it is not age-restricted or private."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install any software or extensions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No installation needed. Everything runs in your browser—just paste the link and extract the metadata."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe and secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it's safe and secure. We do not store any personal data or track users."
+        }
+      }
+    ]
+  }
   </script>
-
 </head>
-
 <body class="bg-black text-white" style="font-family: 'Orbitron', sans-serif;">
   <!-- Header -->
   <header class="bg-[#1c1c1c] px-6 py-4 flex justify-between items-center relative">
+    <!-- Logo -->
     <a href="/ytwizard/" class="text-2xl font-bold text-[#FF0000]">YTWizard</a>
 
+    <!-- Hamburger Button -->
     <button id="menu-btn" class="block md:hidden focus:outline-none">
       <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
+    <!-- Navigation Links -->
     <nav id="menu" class="hidden md:flex md:space-x-6 flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-[#222222] md:bg-transparent text-center md:text-left z-10">
       <a href="/ytwizard/" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Home</a>
       <a href="/ytwizard/#tools" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Tools</a>
@@ -77,99 +71,60 @@
     </nav>
   </header>
 
-  <!-- Tool Title -->
-  <section class="text-center py-10 px-4">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">YouTube Hashtags Generator</h1>
-    <p class="text-gray-300 max-w-xl mx-auto">
-      Enter your YouTube video idea, title, or related keywords, and we will generate the best hashtags for you to increase your video visibility and searchability.
-    </p>
-  </section>
+  <!-- Tool Section -->
+  <main class="flex flex-col items-center justify-center py-8 px-4">
+    <div class="w-full max-w-xl bg-gray-900 p-6 rounded-2xl shadow-lg border border-red-500">
+      <h2 class="text-2xl font-semibold mb-4 text-white text-center">Enter YouTube Video URL to Extract Metadata</h2>
 
-  <!-- Input Area -->
-  <section class="max-w-xl mx-auto px-4 mt-10">
-    <textarea
-      id="videoIdea"
-      placeholder="Enter your YouTube video idea, title, or keywords here"
-      class="w-full px-4 py-3 rounded-lg text-black mb-4"
-      rows="4"
-    ></textarea>
-    <button
-      onclick="generateHashtags()"
-      class="w-full bg-[#FF0000] text-white py-3 rounded-lg hover:bg-red-600"
-    >
-      Generate Hashtags
-    </button>
-    <p
-      id="error"
-      class="text-red-500 text-sm mt-2 hidden"
-    >
-      Please enter a valid video idea, title, or keywords.
-    </p>
+      <input id="youtube-url" type="text" placeholder="https://www.youtube.com/watch?v=example"
+        class="w-full p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500" />
+      
+      <button id="extract-btn"
+        class="mt-4 w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-md transition">
+        Extract Metadata
+      </button>
 
-    <!-- Loader -->
-    <div id="loader" class="text-center mt-4 hidden">
-      <div
-        class="loader border-4 border-white border-t-red-500 rounded-full w-8 h-8 animate-spin mx-auto"
-      ></div>
-      <p class="text-sm mt-2 text-white">Generating hashtags...</p>
+      <p id="status-msg" class="text-sm text-center mt-4 text-gray-300 hidden"></p>
     </div>
-  
-    <!-- Countdown -->
-    <div
-      id="countdown-container"
-      class="text-center mt-4 hidden bg-gray-800 text-white p-4 rounded-lg shadow-md"
-    >
-      <p class="text-sm">
-        Please wait
-        <span
-          id="countdown"
-          class="font-bold text-red-500"
-        >25</span
-        >
-        seconds before hashtags are generated...
-      </p>
-    </div>
+  </main>
 
-    <!-- Result Container -->
-    <div
-      id="result"
-      class="grid gap-4 mt-6 hidden"
-    >
-      <!-- Hashtags will be displayed here -->
+  <section class="px-6 mt-16 max-w-5xl mx-auto">
+    <h2 class="text-xl font-semibold text-white mb-4">Try Other YTWizard Tools</h2>
+    <div class="flex gap-4 overflow-x-auto pb-4">
+      <a href="/ytwizard/yt-thumbnail-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">YouTube Thumbnail Downloader</a>
+      <a href="/yt-mp4-downloader.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">MP4 Downloader</a>
+      <a href="/yt-hashtags-generator.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Hashtag Generator</a>
+      <a href="/yt-seo-extractor.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">SEO Extractor</a>
+      <a href="/yt-meta-extractor.html" class="bg-[#1e1e1e] text-white px-4 py-2 rounded hover:bg-[#FF0000] transition whitespace-nowrap">Meta Data Viewer</a>
     </div>
   </section>
 
-  <!-- About Tool -->
-  <section class="px-6 max-w-5xl mx-auto text-gray-300 leading-relaxed mt-16 space-y-6">
-    <h2 class="text-3xl font-bold text-white">About YouTube Hashtags Generator</h2>
-    <p>
-      The right hashtags can help boost the visibility of your YouTube videos. With the <strong>YTWizard YouTube Hashtags Generator</strong>, you can get relevant hashtags tailored to your video idea or keywords. These hashtags can improve your SEO rankings and help your videos appear in search results for popular topics.
-    </p>
+  <!-- SEO Description Text -->
+  <section class="max-w-4xl mx-auto px-6 py-6 text-gray-300">
+    <h2 class="text-2xl font-semibold text-red-500 mb-4">Free YouTube Metadata Extractor Online</h2>
+    <p class="mb-4">Our YouTube Metadata Extractor lets you easily fetch video details such as title, description, upload date, views, and more. No sign-up required—just paste the link and extract the data instantly.</p>
+    <p class="mb-4">Use this tool to get important insights into any YouTube video, whether for research, content creation, or SEO purposes. It's fast, secure, and 100% free to use.</p>
   </section>
 
   <!-- FAQ Section -->
-  <section class="px-6 max-w-5xl mx-auto text-gray-300 leading-relaxed mt-16 space-y-6">
-    <h2 class="text-3xl font-bold text-white">Frequently Asked Questions (FAQ)</h2>
-
-    <div class="space-y-4">
+  <section class="max-w-3xl mx-auto px-4 mt-10 text-gray-300">
+    <h2 class="text-2xl font-semibold text-red-500 mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-6">
       <div>
-        <h3 class="text-lg font-semibold text-white">What are YouTube hashtags?</h3>
-        <p>Hashtags on YouTube are clickable keywords that help categorize videos. When viewers click on a hashtag, they’re shown other videos with the same hashtag. This helps increase discoverability and video ranking.</p>
+        <h3 class="text-lg font-semibold text-white">Is this YouTube Metadata Extractor free?</h3>
+        <p>Yes, it is 100% free to use with unlimited extractions and no sign-ups required.</p>
       </div>
-
       <div>
-        <h3 class="text-lg font-semibold text-white">Why are hashtags important for YouTube videos?</h3>
-        <p>Hashtags help increase your video's visibility, making it easier for users to find your content. They play a key role in YouTube SEO and video discoverability by improving the ranking of your videos in search results.</p>
+        <h3 class="text-lg font-semibold text-white">Can I extract metadata from any YouTube video?</h3>
+        <p>You can extract metadata from any public YouTube video, as long as it is not age-restricted or private.</p>
       </div>
-
       <div>
-        <h3 class="text-lg font-semibold text-white">How does the YouTube Hashtags Generator work?</h3>
-        <p>The YouTube Hashtags Generator uses your video idea, title, or keywords to generate a list of relevant and trending hashtags for your video. These hashtags are based on popular search terms and YouTube algorithms, helping you optimize your video for better ranking.</p>
+        <h3 class="text-lg font-semibold text-white">Do I need to install any software or extensions?</h3>
+        <p>No installation needed. Everything runs in your browser—just paste the link and extract.</p>
       </div>
-
       <div>
-        <h3 class="text-lg font-semibold text-white">Can I use the generated hashtags for all my YouTube videos?</h3>
-        <p>Yes! You can use the generated hashtags for any of your videos to help improve discoverability. However, make sure the hashtags are relevant to your video content for better results.</p>
+        <h3 class="text-lg font-semibold text-white">Is it safe and secure?</h3>
+        <p>Yes, it's safe and secure. We do not store any personal data or track users.</p>
       </div>
     </div>
   </section>
@@ -178,82 +133,65 @@
   <footer class="bg-[#1c1c1c] text-white text-center py-4 mt-8">
     <p id="footer-text" class="text-sm mb-1"></p>
     <p class="text-sm">Developed with <span class="text-red-600">❤️</span> by Aditya in <span class="text-green-500">🇮🇳</span></p>
+
     <script>
       const year = new Date().getFullYear();
       const siteName = "YTWizard";
       const homeURL = "/ytwizard/";
+
       document.getElementById("footer-text").innerHTML =
         `&copy; ${year} <a href="${homeURL}" class="text-[#FF0000] hover:underline">${siteName}</a>. All rights reserved.`;
     </script>
   </footer>
 
-  <!-- JS -->
+  <!-- JavaScript to Toggle Menu -->
   <script>
-    function generateHashtags() {
-      const videoIdea = document.getElementById("videoIdea").value.trim();
-      const result = document.getElementById("result");
-      const loader = document.getElementById("loader");
-      const error = document.getElementById("error");
-      const countdownContainer = document.getElementById("countdown-container");
-      const countdownText = document.getElementById("countdown");
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
 
-      result.innerHTML = "";
-      result.classList.add("hidden");
-      error.classList.add("hidden");
-      loader.classList.remove("hidden");
-      countdownContainer.classList.add("hidden");
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
 
-      if (!videoIdea) {
-        loader.classList.add("hidden");
-        error.classList.remove("hidden");
+    // Metadata Extraction Script
+    const extractBtn = document.getElementById('extract-btn');
+    const urlInput = document.getElementById('youtube-url');
+    const statusMsg = document.getElementById('status-msg');
+
+    extractBtn.addEventListener('click', async () => {
+      const youtubeUrl = urlInput.value.trim();
+      
+      if (!youtubeUrl) {
+        statusMsg.textContent = 'Please enter a YouTube video URL.';
+        statusMsg.classList.remove('hidden');
         return;
       }
 
-      let timeLeft = 25;
-      countdownText.textContent = timeLeft;
-      countdownContainer.classList.remove("hidden");
+      statusMsg.textContent = 'Processing... please wait.';
+      statusMsg.classList.remove('hidden');
 
-      const countdownInterval = setInterval(() => {
-        timeLeft--;
-        countdownText.textContent = timeLeft;
+      try {
+        const response = await fetch('/extract-metadata', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ url: youtubeUrl })
+        });
 
-        if (timeLeft <= 0) {
-          clearInterval(countdownInterval);
-          countdownContainer.classList.add("hidden");
+        const data = await response.json();
 
-          // Generate hashtags (this would typically involve API calls or keyword research logic)
-          const hashtags = [
-            "#YouTube",
-            "#VideoMarketing",
-            "#ContentCreation",
-            "#ViralVideo",
-            "#Trending",
-            "#YouTubeSEO",
-            "#Hashtags",
-            "#VideoIdeas",
-            "#YouTubeTips",
-            "#GrowYourChannel"
-          ];
-
-          // Display generated hashtags
-          result.innerHTML = hashtags.map(tag => {
-            return `
-              <div class="bg-[#1e1e1e] rounded-lg p-4 shadow-md text-center">
-                <h3 class="text-lg font-semibold mb-2 text-white">${tag}</h3>
-              </div>
-            `;
-          }).join("");
-
-          loader.classList.add("hidden");
-          result.classList.remove("hidden");
+        if (response.ok && data.metadata) {
+          // Display metadata here
+          statusMsg.textContent = 'Metadata extracted successfully!';
+          // You can dynamically display metadata here as needed
+        } else {
+          statusMsg.textContent = data.error || 'Failed to extract metadata.';
         }
-      }, 1000);
-    }
+      } catch (error) {
+        statusMsg.textContent = 'An error occurred. Please try again.';
+      }
+    });
   </script>
-
-  <style>
-    .loader {
-      border-top-color: #FF0000;
-    }
-  </style>
 </body>
+</html>
