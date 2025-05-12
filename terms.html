@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Thumbnail Downloader - YTWizard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white" style="font-family: 'Orbitron', sans-serif;">
+  <!-- Header -->
+  <header class="bg-[#1c1c1c] px-6 py-4 flex justify-between items-center relative">
+  <!-- Logo -->
+  <a href="/ytwizard/" class="text-2xl font-bold text-[#FF0000]">YTWizard</a>
+
+  <!-- Hamburger Button -->
+  <button id="menu-btn" class="block md:hidden focus:outline-none">
+    <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Navigation Links -->
+  <nav id="menu" class="hidden md:flex md:space-x-6 flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-[#222222] md:bg-transparent text-center md:text-left z-10">
+    <a href="/ytwizard/" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Home</a>
+    <a href="/ytwizard/#tools" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Tools</a>
+    <a href="/ytwizard/#about" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">About</a>
+    <a href="/ytwizard/#contact" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Contact</a>
+  </nav>
+  </header>
+
+<section class="max-w-4xl mx-auto px-6 py-10 text-gray-800">
+  <h1 class="text-3xl font-bold mb-6">Terms and Conditions</h1>
+
+  <p class="mb-4">
+    Welcome to <strong>YTWizard</strong>. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">1. Use of the Website</h2>
+  <p class="mb-4">
+    This website is intended to provide users with tools and utilities such as YouTube metadata extraction. You agree to use this site only for lawful purposes and in a way that does not infringe on the rights of others or restrict their use and enjoyment of the site.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">2. Intellectual Property</h2>
+  <p class="mb-4">
+    All content, branding, and code used on this site are the property of YTWizard unless otherwise stated. You may not copy, reproduce, or redistribute any part of this site without prior written consent.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">3. Limitation of Liability</h2>
+  <p class="mb-4">
+    YTWizard provides tools “as-is” without warranties of any kind. We are not liable for any damages or losses that may result from the use or misuse of our tools and services.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">4. User Conduct</h2>
+  <p class="mb-4">
+    You agree not to misuse our services for any unlawful purpose, including the downloading or accessing of content that violates YouTube’s or any third party’s terms of service.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">5. Third-Party Links</h2>
+  <p class="mb-4">
+    We may include links to third-party websites. We do not control or endorse their content and are not responsible for any issues that arise from your interaction with them.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">6. Modifications</h2>
+  <p class="mb-4">
+    We reserve the right to update or change these terms at any time. Any changes will be posted on this page, and your continued use of the site indicates your acceptance of those changes.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">7. Termination</h2>
+  <p class="mb-4">
+    We reserve the right to suspend or terminate access to our website or services at any time, without notice, for conduct that we believe violates these terms.
+  </p>
+
+  <h2 class="text-2xl font-semibold mt-6 mb-2">8. Contact</h2>
+  <p class="mb-4">
+    If you have any questions regarding these Terms and Conditions, please <a href="/contact" class="text-blue-600 hover:underline">contact us</a>.
+  </p>
+</section>
+
+    <!-- Footer -->
+<footer class="bg-[#1c1c1c] text-white text-center py-4 mt-8">
+  <p id="footer-text" class="text-sm mb-1"></p>
+  <p class="text-sm">Developed with <span class="text-red-600">❤️</span> by Aditya in <span class="text-green-500">🇮🇳</span></p>
+
+  <script>
+    const year = new Date().getFullYear();
+    const siteName = "YTWizard";
+    const homeURL = "/ytwizard/";
+
+    document.getElementById("footer-text").innerHTML =
+      `&copy; ${year} <a href="${homeURL}" class="text-[#FF0000] hover:underline">${siteName}</a>. All rights reserved.`;
+  </script>
+</footer>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+  
+</script>
+</body>
+</html>
