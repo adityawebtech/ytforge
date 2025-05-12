@@ -174,7 +174,7 @@ const statusMsg = document.getElementById('status-msg');
 
 downloadBtn.addEventListener('click', async () => {
   const youtubeUrl = urlInput.value.trim();
-  
+
   if (!youtubeUrl) {
     statusMsg.textContent = 'Please enter a YouTube video URL.';
     statusMsg.classList.remove('hidden');
@@ -190,7 +190,7 @@ downloadBtn.addEventListener('click', async () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ url: youtubeUrl })
+      body: JSON.stringify({ url: youtubeUrl })  // Ensure this is properly structured
     });
 
     const data = await response.json();
@@ -209,9 +209,7 @@ downloadBtn.addEventListener('click', async () => {
       statusMsg.textContent = data.error || 'Download failed.';
     }
   } catch (error) {
-    statusMsg.textContent = 'An error occurred. Please try again.';
-  }
-});
+    statusMsg.textContent = 'An error occurred. Please try again!';
 
 </script>
   
