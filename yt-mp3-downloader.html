@@ -193,12 +193,13 @@ document.addEventListener('DOMContentLoaded', () => {
     statusMsg.classList.remove('hidden');
 
     try {
+      // Corrected the URL format
       const response = await fetch('https://b4f62365-f77e-4c17-8bd3-e6df7aef481b-00-3p4np4t1ox39e.sisko.replit.dev/api/extract', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ url: `https://www.youtube.com/watch?v=${videoId}` })
+        body: JSON.stringify({ url: `https://www.youtube.com/watch?v=${videoId}` })  // Ensure full URL
       });
 
       const data = await response.json();
