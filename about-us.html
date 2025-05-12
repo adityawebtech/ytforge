@@ -2,46 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - YTFORGE</title>
-  <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Thumbnail Downloader - YTWizard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="about-page">
-
+<body class="bg-black text-white" style="font-family: 'Orbitron', sans-serif;">
   <!-- Header -->
+  <header class="bg-[#1c1c1c] px-6 py-4 flex justify-between items-center relative">
+  <!-- Logo -->
+  <a href="/ytwizard/" class="text-2xl font-bold text-[#FF0000]">YTWizard</a>
+
+  <!-- Hamburger Button -->
+  <button id="menu-btn" class="block md:hidden focus:outline-none">
+    <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Navigation Links -->
+  <nav id="menu" class="hidden md:flex md:space-x-6 flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-[#222222] md:bg-transparent text-center md:text-left z-10">
+    <a href="/ytwizard/" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Home</a>
+    <a href="/ytwizard/#tools" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Tools</a>
+    <a href="/ytwizard/#about" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">About</a>
+    <a href="/ytwizard/#contact" class="block py-2 px-4 md:py-0 text-white hover:text-[#FF0000]">Contact</a>
+  </nav>
+  </header>
+
+<!-- ABOUT US PAGE --><!-- Use the same header and footer from your main page --><section class="max-w-4xl mx-auto px-6 py-12 text-gray-300">
+  <h1 class="text-3xl font-bold text-red-500 mb-6">About Us</h1>
+  <p class="mb-4">YTWizard is a free online platform offering powerful YouTube tools including metadata extractor, thumbnail downloader, hashtag generator, and more. Our mission is to empower creators, marketers, and everyday users with simple and fast solutions to get the most out of YouTube.</p>
+  <p class="mb-4">Built with passion by Aditya Pal, YTWizard is constantly growing with user-friendly tools to enhance your YouTube experience—no installations or sign-ups required.</p>
+</section><!-- CONTACT US PAGE --><section class="max-w-4xl mx-auto px-6 py-12 text-gray-300">
+  <h1 class="text-3xl font-bold text-red-500 mb-6">Contact Us</h1>
+  <p class="mb-4">Have feedback, questions, or business inquiries? Feel free to reach out!</p>
+  <ul class="space-y-3">
+    <li><strong>Email:</strong> <a href="mailto:adityawebtech@gmail.com" class="text-red-400 hover:underline">adityawebtech@gmail.com</a></li>
+    <li><strong>Twitter:</strong> <a href="https://twitter.com/adityawebtech" class="text-red-400 hover:underline" target="_blank">@adityawebtech</a></li>
+    <li><strong>Location:</strong> India</li>
+  </ul>
+</section><!-- PRIVACY POLICY PAGE --><section class="max-w-4xl mx-auto px-6 py-12 text-gray-300">
+  <h1 class="text-3xl font-bold text-red-500 mb-6">Privacy Policy</h1>
+  <p class="mb-4">At YTWizard, we respect your privacy. This website does not collect or store any personal data. All tools are client-side and any data you enter remains in your browser and is never sent to our servers.</p>
+  <p class="mb-4">We do not use cookies or tracking technologies. Your usage of this site is completely anonymous. For questions, contact us at <a href="mailto:adityawebtech@gmail.com" class="text-red-400 hover:underline">adityawebtech@gmail.com</a>.</p>
+</section><!-- TERMS AND CONDITIONS PAGE --><section class="max-w-4xl mx-auto px-6 py-12 text-gray-300">
+  <h1 class="text-3xl font-bold text-red-500 mb-6">Terms and Conditions</h1>
+  <p class="mb-4">By using YTWizard, you agree to use our tools responsibly and within legal boundaries. All tools are provided as-is, without warranty of any kind. We are not responsible for misuse of the tools or any resulting consequences.</p>
+  <p class="mb-4">You agree not to use our platform to download, store, or share any content that violates copyright laws or YouTube’s terms of service. Continued use of this site indicates your acceptance of these terms.</p>
+</section>
+
+    <!-- Footer -->
+<footer class="bg-[#1c1c1c] text-white text-center py-4 mt-8">
+  <p id="footer-text" class="text-sm mb-1"></p>
+  <p class="text-sm">Developed with <span class="text-red-600">❤️</span> by Aditya in <span class="text-green-500">🇮🇳</span></p>
+
+  <script>
+    const year = new Date().getFullYear();
+    const siteName = "YTWizard";
+    const homeURL = "/ytwizard/";
+
+    document.getElementById("footer-text").innerHTML =
+      `&copy; ${year} <a href="${homeURL}" class="text-[#FF0000] hover:underline">${siteName}</a>. All rights reserved.`;
+  </script>
+</footer>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
   
- <div id="header"></div>
-  <!-- About Section -->
-  <main class="about-container">
-    <section class="about-hero">
-      <img src="images/about-us.jpg" alt="About YTFORGE" class="about-image" />
-      <div class="about-intro">
-        <h1>About YTFORGE</h1>
-        <p>At YTFORGE, we specialize in cutting-edge digital solutions, creating innovative and reliable tools that empower businesses and individuals. Our team is driven by creativity, passion, and a deep understanding of the ever-evolving digital landscape.</p>
-      </div>
-    </section>
-
-    <section class="about-content">
-      <h2>Our Mission</h2>
-      <p>Our mission is to provide users with robust, scalable tools and digital experiences that not only meet their needs but exceed expectations. By focusing on quality, user-friendliness, and support, we aim to be the go-to platform for all digital solutions.</p>
-
-      <h2>What We Offer</h2>
-      <ul>
-        <li>Cutting-edge tool development</li>
-        <li>User-friendly interface</li>
-        <li>24/7 Customer Support</li>
-        <li>Customizable solutions for businesses</li>
-        <li>Innovative design and features</li>
-      </ul>
-
-      <h2>Our Team</h2>
-      <p>We are a diverse group of digital innovators, designers, and developers who bring our best to every project. We pride ourselves on collaboration, creativity, and a deep understanding of our users’ needs. Together, we create value through innovation.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-   <div id="footer"></div>
-<script src="components.js"></script>
+</script>
 </body>
 </html>
